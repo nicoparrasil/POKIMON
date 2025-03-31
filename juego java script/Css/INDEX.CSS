@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background: aliceblue;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container .btn-menu, .logo {
+    float: left;
+    line-height: 100px;
+}
+
+.logo h1 {
+    color: #000000;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.container .menu {
+    float: right;
+    line-height: 100px;
+}
+
+.container .menu a {
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.container .menu a:hover {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+}
+
+/* Estilos para la navegación y bootstrap */
+.navbar {
+    background-color: transparent !important;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-item .nav-link {
+    color: #000000 !important;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item .nav-link:hover, .nav-item .nav-link.active {
+    border-bottom: 2px solid #000000;
+}
+
+/* Estilos para el contenido principal */
+center {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #000000;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+hr {
+    width: 70%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+/* Estilos para formularios */
+#registroForm {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 450px;
+    margin: 1rem auto;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+input {
+    width: 60%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #777;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+input::placeholder {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: #222;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para los botones del menú principal */
+.btn-outline-dark {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-width: 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    width: auto;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustar el espacio entre botones */
+.d-grid.gap-4 {
+    gap: 1rem !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 18px;
+    }
+    
+    #registroForm {
+        padding: 1.5rem;
+    }
+    
+    label {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    center {
+        padding: 1rem;
+    }
+    
+    .btn-outline-dark {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Ajustes para el navbar de Bootstrap */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+}

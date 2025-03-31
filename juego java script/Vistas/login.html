@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKIMON</title>
+    <link rel="stylesheet" href="../Css/LOGIN.CSS">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu" class="navbar bg-body-tertiary">
+        <div class="container">
+            <div class="logo">
+                <h1>Pokimon</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="menu">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="opciones.html">Opciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Registro</a>
+                        </li>
+
+
+            </nav>
+        </div>
+        </div>
+    </nav>
+    <center>
+        <h1>BIENVENIDO AL MUNDO POKIMON</h1>
+        <h3>INICIO DE SECION</h3>
+        <hr>
+        <form id="registroForm" onsubmit="event.preventDefault(); Registro();">
+            <label for="correo">Correo: </label>
+            <input type="email" placeholder="Correo" id="correo" required><br><br>
+
+            <label for="clave">Contraseña: </label>
+            <input type="password" placeholder="Contraseña" id="clave" required><br><br>
+
+            <button onclick="Loguear()">Iniciar Secion</button>
+            <button>
+                <a href="registro.html">Registrarse</a>
+            </button>
+        </form>
+    </center>
+</body>
+<footer>
+    <script src="../Js/index.js"></script>
+</footer>
+</html>
