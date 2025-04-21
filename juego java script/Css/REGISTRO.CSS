@@ -1,0 +1,256 @@
+/* Reseteo básico de estilos para eliminar márgenes y rellenos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y bordes no aumenten el tamaño total */
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+    background-color: #000; /* Fondo negro como base */
+    background-image: url('../assets/Fondos/imagen3.jpg'); /* Imagen de fondo temática Pokémon */
+    background-size: cover; /* Cubre todo el espacio disponible */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* La imagen permanece fija al hacer scroll */
+    background-repeat: no-repeat; /* No repite la imagen */
+    color: #fff; /* Texto en color blanco para contraste */
+    min-height: 100vh; /* Altura mínima para cubrir toda la pantalla */
+    display: flex; /* Uso de flexbox para alineación */
+    flex-direction: column; /* Elementos apilados verticalmente */
+}
+
+/* Contenedor principal que mantiene el contenido centrado */
+.container {
+    width: 90%; /* Ancho del 90% del contenedor padre */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilos para el encabezado */
+header {
+    padding: 20px 0; /* Espaciado vertical */
+}
+
+/* Estilos para el logo */
+.logo {
+    padding: 10px 0;
+    text-align: left; /* Alineación a la izquierda */
+}
+
+/* Estilo para el texto del logo */
+.logo h1 {
+    font-family: 'Press Start 2P', 'Courier New', monospace; /* Fuente pixelada estilo juego */
+    color: #FFCB05; /* Amarillo típico de Pokémon */
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 #3466AF, /* Sombras multicolor para efecto 3D */
+                 4px 4px 0 #FF0000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Contenedor principal del contenido */
+main.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+/* Alineación de texto centrado */
+.text-center {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para títulos principales */
+h1 {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #FFCB05;
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #3466AF,
+                 4px 4px 0 #FF0000;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* Estilo para subtítulos */
+h3 {
+    font-family: 'Courier New', monospace;
+    color: #4DB6ED; /* Azul claro */
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #4DB6ED; /* Efecto de brillo */
+    margin-bottom: 20px;
+}
+
+/* Línea divisoria con gradiente de colores */
+hr {
+    width: 60%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    height: 2px;
+    background: linear-gradient(to right,
+                rgba(52, 102, 175, 0.8),
+                rgba(255, 119, 0, 0.8),
+                rgba(76, 175, 80, 0.8)); 
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Estilos del formulario de registro */
+#registroForm {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.3), 
+                0 0 50px rgba(255, 0, 0, 0.2),
+                0 0 70px rgba(0, 255, 0, 0.2); /* Múltiples sombras para efecto neón */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-left: 0;
+}
+
+/* Barra de color en la parte superior del formulario */
+#registroForm::before {
+    content: ""; /* Elemento generado */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #00f, #f00, #0f0); /* Gradiente RGB */
+    opacity: 0.7;
+}
+
+/* Espaciado entre grupos de campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    color: #FFCB05;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+    text-shadow: 0 0 5px rgba(255, 203, 5, 0.5);
+}
+
+/* Estilo para los campos de entrada */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Transición suave para efectos hover/focus */
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+/* Estilo para campos de entrada con foco */
+.form-control:focus {
+    border-color: #FFCB05;
+    box-shadow: 0 0 10px rgba(52, 102, 175, 0.7);
+    outline: none;
+}
+
+/* Contenedor para los botones */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Estilo base para botones */
+.btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Estilo para botones secundarios (iniciar sesión) */
+.btn-secondary {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto hover para botones secundarios */
+.btn-secondary:hover {
+    background: rgba(50, 50, 50, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px); /* Pequeña elevación al pasar el mouse */
+}
+
+/* Estilo para botones primarios (registrar) */
+.btn-primary {
+    background: #0066FF;
+    border: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+}
+
+/* Efecto hover para botones primarios */
+.btn-primary:hover {
+    background: #0055DD;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+    /* Reducción de tamaño de elementos para pantallas pequeñas */
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    #registroForm {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .form-control {
+        padding: 10px;
+    }
+    
+    /* Cambio a diseño vertical en pantallas pequeñas */
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

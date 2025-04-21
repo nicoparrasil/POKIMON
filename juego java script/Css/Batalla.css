@@ -1,0 +1,374 @@
+/* Importación de fuentes de Google Fonts
+   'Press Start 2P' es una fuente que parece de videojuegos retro
+   'Quicksand' es una fuente moderna y legible */
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+   
+   /* Estilos para el cuerpo de la página (toda la pantalla) */
+   body {
+       background-color: #121212;                /* Color de fondo negro oscuro */
+       background-image: url('../assets/Fondos/imagen5.jpg'); /* Ruta a la imagen de fondo - CAMBIAR ESTO */
+       background-size: cover;                  /* La imagen cubre toda la pantalla */
+       background-position: center;             /* La imagen se centra en la pantalla */
+       background-repeat: no-repeat;            /* La imagen no se repite */
+       background-attachment: fixed;            /* La imagen se queda fija al hacer scroll */
+       font-family: 'Quicksand', sans-serif;    /* Tipo de letra principal */
+       color: #e0e0e0;                          /* Color del texto (gris claro) */
+       margin: 0;                               /* Elimina el margen predeterminado */
+       padding: 20px;                           /* Espacio interior alrededor de toda la página */
+       min-height: 100vh;                       /* Asegura que ocupe al menos toda la altura de la ventana */
+   }
+   
+   /* Contenedor principal que limita el ancho del contenido y lo centra */
+   .container {
+       max-width: 900px;                        /* Ancho máximo del contenido */
+       margin: 0 auto;                          /* Centra el contenedor horizontalmente */
+       padding: 30px;                           /* Espacio interior del contenedor */
+       background-color: rgba(18, 18, 18, 0.85); /* Color de fondo semi-transparente */
+       border-radius: 15px;                     /* Bordes redondeados */
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), /* Sombra exterior para dar profundidad */
+                   0 0 40px rgba(0, 0, 0, 0.3);
+       border: 1px solid rgba(255, 255, 255, 0.08); /* Borde sutil */
+   }
+   
+   /* Estilo para el título principal "Escoge tu Pokimon" */
+   .title {
+       text-align: center;                      /* Centra el texto */
+       font-size: 28px;                         /* Tamaño de la letra */
+       margin-bottom: 35px;                     /* Espacio debajo del título */
+       font-family: 'Press Start 2P', cursive;  /* Fuente estilo videojuego */
+       color: white;                            /* Color del texto */
+       position: relative;                      /* Necesario para posicionar la línea decorativa */
+       padding: 15px 0;                         /* Espacio interior arriba y abajo */
+       text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Brillo suave alrededor del texto */
+       background: none;                        /* Sin fondo */
+       border: none;                            /* Sin borde */
+   }
+   
+   /* Línea decorativa debajo del título con colores de los tipos Pokémon */
+   .title::after {
+       content: '';                             /* Contenido necesario para que aparezca el elemento */
+       position: absolute;                      /* Posicionamiento absoluto respecto al título */
+       bottom: 0;                               /* Se coloca en la parte inferior */
+       left: 25%;                               /* Inicia al 25% del ancho del título */
+       width: 50%;                              /* Ocupa el 50% del ancho del título */
+       height: 3px;                             /* Altura de la línea */
+       /* Colores que representan los tipos de Pokémon (Planta, Fuego, Tierra, Agua, Eléctrico) */
+       background: linear-gradient(to right, #3cae5c, #ee7f30, #9c564a, #4fcee8, #fdcb58);
+       border-radius: 2px;                      /* Bordes redondeados de la línea */
+   }
+   
+   /* Configuración de la cuadrícula para mostrar las tarjetas de Pokémon */
+   .pokemon-grid {
+       display: grid;                           /* Establece layout de cuadrícula */
+       grid-template-columns: repeat(3, 1fr);   /* 3 columnas de igual tamaño */
+       gap: 25px;                               /* Espacio entre las tarjetas */
+       margin-bottom: 40px;                     /* Espacio debajo de la cuadrícula */
+   }
+   
+   /* Estilos para cada tarjeta de Pokémon */
+   .pokemon-card {
+       background-color: rgba(25, 25, 25, 0.9); /* Fondo oscuro semi-transparente */
+       border-radius: 12px;                     /* Bordes redondeados */
+       padding: 18px;                           /* Espacio interior */
+       text-align: center;                      /* Centra el contenido de texto */
+       position: relative;                      /* Para posicionamiento de elementos internos */
+       border: 1px solid rgba(255, 255, 255, 0.05); /* Borde sutil */
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+       transition: all 0.3s ease;               /* Animación suave para efectos */
+       display: flex;                           /* Permite organizar contenido verticalmente */
+       flex-direction: column;                  /* Organiza los elementos en columna */
+       align-items: center;                     /* Centra los elementos horizontalmente */
+       cursor: pointer;                         /* Cambia el cursor a mano al pasar sobre la tarjeta */
+   }
+   
+   /* Efecto al pasar el cursor sobre la tarjeta */
+   .pokemon-card:hover {
+       transform: translateY(-8px);             /* Eleva la tarjeta 8px hacia arriba */
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Aumenta la sombra para más profundidad */
+   }
+   
+   /* Bordes de color según el tipo del Pokémon - cada clase corresponde a un tipo */
+   .electric {
+       border-left: 3px solid #fdcb58;          /* Borde amarillo para tipo Eléctrico (Pikachu) */
+   }
+   
+   .omularo {
+       border-left: 3px solid #ee7f30;          /* Borde naranja para tipo Fuego (Charizard) */
+   }
+   
+   .exeggutore {
+       border-left: 3px solid #3cae5c;          /* Borde verde para tipo Planta (Bulbasaur) */
+   }
+   
+   .venomoth {
+       border-left: 3px solid #9c564a;          /* Borde marrón para tipo Veneno/Fantasma (Gengar) */
+   }
+   
+   .entei {
+       border-left: 3px solid #4fcee8;          /* Borde azul para tipo Agua (Gyarados) */
+   }
+   
+   .goodra {
+       border-left: 3px solid #a160ed;          /* Borde morado para tipo Lucha/Acero (Lucario) */
+   }
+   
+   /* Estilo para el nombre del Pokémon */
+   .pokemon-name {
+       font-size: 20px;                         /* Tamaño de la letra */
+       font-weight: 600;                        /* Grosor de la letra (semi-negrita) */
+       margin-bottom: 12px;                     /* Espacio debajo del nombre */
+       color: #fff;                             /* Color blanco */
+       letter-spacing: 1px;                     /* Espaciado entre letras */
+       position: relative;                      /* Para posicionamiento */
+       z-index: 1;                              /* Capa de apilamiento (encima de otros elementos) */
+       width: 100%;                             /* Ocupa todo el ancho disponible */
+   }
+   
+   /* Contenedor para la imagen del Pokémon */
+   .image-container {
+       width: 120px;                            /* Ancho fijo */
+       height: 120px;                           /* Alto fijo */
+       display: flex;                           /* Permite centrar la imagen */
+       align-items: center;                     /* Centra verticalmente */
+       justify-content: center;                 /* Centra horizontalmente */
+       margin: 15px 0;                          /* Margen arriba y abajo */
+       position: relative;                      /* Para posicionamiento */
+       z-index: 1;                              /* Capa de apilamiento */
+       border-radius: 50%;                      /* Forma circular */
+       background-color: rgba(40, 40, 40, 0.6); /* Fondo oscuro semi-transparente */
+       padding: 5px;                            /* Espacio interior */
+   }
+   
+   /* Estilo para la imagen del Pokémon */
+   .pokemon-image {
+       width: 100%;                             /* Ocupa todo el ancho del contenedor */
+       height: 100%;                            /* Ocupa todo el alto del contenedor */
+       object-fit: contain;                     /* Mantiene la proporción sin recortar */
+       transition: all 0.3s ease;               /* Animación suave para efectos */
+   }
+   
+   /* Efecto al pasar el cursor sobre la tarjeta - afecta a la imagen */
+   .pokemon-card:hover .pokemon-image {
+       transform: scale(1.1);                   /* Aumenta el tamaño de la imagen un 10% */
+   }
+   
+   /* Contenedor de la barra de salud */
+   .health-bar {
+       background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro semi-transparente */
+       height: 8px;                             /* Altura de la barra */
+       border-radius: 4px;                      /* Bordes redondeados */
+       margin: 15px 0;                          /* Espacio arriba y abajo */
+       position: relative;                      /* Para posicionamiento interno */
+       width: 90%;                              /* Ocupa el 90% del ancho disponible */
+       overflow: hidden;                        /* Oculta lo que sobresalga */
+   }
+   
+   /* Relleno de la barra de salud (parte coloreada) */
+   .health-fill {
+       height: 100%;                            /* Ocupa toda la altura de la barra */
+       border-radius: 4px;                      /* Bordes redondeados */
+       width: 100%;                             /* Por defecto, la salud está completa */
+       position: relative;                      /* Para posicionamiento */
+   }
+   
+   /* Colores de la barra de salud según el tipo de Pokémon */
+   .electric .health-fill {
+       background-color: #fdcb58;               /* Amarillo para Pikachu (Eléctrico) */
+   }
+   
+   .rockeon .health-fill {
+       background-color: #30D158;               /* Verde para tipo Roca */
+   }
+   
+   .omularo .health-fill {
+       background-color: #ee7f30;               /* Naranja para Charizard (Fuego) */
+   }
+   
+   .exeggutore .health-fill {
+       background-color: #3cae5c;               /* Verde para Bulbasaur (Planta) */
+   }
+   
+   .venomoth .health-fill {
+       background-color: #9c564a;               /* Marrón para Gengar (Fantasma/Veneno) */
+   }
+   
+   .entei .health-fill {
+       background-color: #4fcee8;               /* Azul para Gyarados (Agua) */
+       width: 90%;                              /* Muestra que está al 90% de salud */
+   }
+   
+   .goodra .health-fill {
+       background-color: #a160ed;               /* Morado para Lucario (Lucha/Acero) */
+   }
+   
+   /* Estilo para el texto de Puntos de Salud (PS) */
+   .stats {
+       font-size: 16px;                         /* Tamaño de la letra */
+       color: #d4d4d4;                          /* Color gris claro */
+       width: 100%;                             /* Ocupa todo el ancho disponible */
+       margin-bottom: 8px;                      /* Espacio debajo */
+   }
+   
+   /* Estilo para el indicador de nivel (Nv) */
+   .level {
+       position: absolute;                      /* Posicionamiento absoluto dentro de la tarjeta */
+       top: 10px;                               /* Distancia desde arriba */
+       left: 10px;                              /* Distancia desde la izquierda */
+       background-color: rgba(20, 20, 20, 0.8); /* Fondo oscuro semi-transparente */
+       padding: 5px 8px;                        /* Espacio interior */
+       border-radius: 8px;                      /* Bordes redondeados */
+       font-size: 14px;                         /* Tamaño de la letra */
+       font-weight: 600;                        /* Grosor de la letra (semi-negrita) */
+       color: #d4d4d4;                          /* Color gris claro */
+   }
+   
+   /* Estilo para el bloque de información del Pokémon */
+   .pokemon-info {
+       background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro semi-transparente */
+       padding: 12px;                           /* Espacio interior */
+       border-radius: 8px;                      /* Bordes redondeados */
+       margin-top: 12px;                        /* Espacio arriba */
+       font-size: 14px;                         /* Tamaño de la letra */
+       text-align: left;                        /* Alineación del texto a la izquierda */
+       line-height: 1.5;                        /* Espaciado entre líneas */
+       width: 90%;                              /* Ocupa el 90% del ancho disponible */
+   }
+   
+   /* Contenedor para los botones */
+   .buttons {
+       display: flex;                           /* Diseño flexible para los botones */
+       justify-content: center;                 /* Centra los botones horizontalmente */
+       gap: 40px;                               /* Espacio entre botones */
+       margin-top: 30px;                        /* Espacio arriba */
+   }
+   
+   /* Estilo base para los botones */
+   .btn {
+       padding: 12px 24px;                      /* Espacio interior horizontal y vertical */
+       border-radius: 8px;                      /* Bordes redondeados */
+       font-size: 16px;                         /* Tamaño de la letra */
+       font-weight: 600;                        /* Grosor de la letra (semi-negrita) */
+       cursor: pointer;                         /* Cambia el cursor a mano al pasar por encima */
+       transition: all 0.3s ease;               /* Animación suave para efectos */
+       text-transform: uppercase;               /* Texto en mayúsculas */
+       letter-spacing: 1px;                     /* Espaciado entre letras */
+       min-width: 120px;                        /* Ancho mínimo de botones */
+       text-decoration: none;                   /* Elimina el subrayado en enlaces */
+       display: inline-flex;                    /* Permite centrar contenido */
+       justify-content: center;                 /* Centra horizontalmente */
+       align-items: center;                     /* Centra verticalmente */
+       font-family: 'Quicksand', sans-serif;    /* Misma fuente que el resto del texto */
+   }
+   
+   /* Estilo específico para el botón Batalla */
+   .btn-outline-dark {
+       background-color: transparent;           /* Fondo transparente */
+       color: #fdcb58;                          /* Color amarillo (como Pikachu) */
+       border: 2px solid #fdcb58;               /* Borde amarillo */
+   }
+   
+   /* Efecto al pasar el cursor sobre el botón Batalla */
+   .btn-outline-dark:hover {
+       background-color: #fdcb58;               /* Fondo amarillo */
+       color: #121212;                          /* Texto negro */
+       transform: translateY(-3px);             /* Eleva el botón ligeramente */
+       box-shadow: 0 5px 15px rgba(253, 203, 88, 0.3); /* Sombra amarilla */
+   }
+   
+   /* Estilo específico para el botón Salir */
+   .btn-exit {
+       background-color: transparent;           /* Fondo transparente */
+       color: #e0e0e0;                          /* Color gris claro */
+       border: 2px solid #e0e0e0;               /* Borde gris claro */
+   }
+   
+   /* Efecto al pasar el cursor sobre el botón Salir */
+   .btn-exit:hover {
+       background-color: #e0e0e0;               /* Fondo gris claro */
+       color: #121212;                          /* Texto negro */
+       transform: translateY(-3px);             /* Eleva el botón ligeramente */
+       box-shadow: 0 5px 15px rgba(224, 224, 224, 0.2); /* Sombra sutil */
+   }
+   
+   /* Estilos para la tarjeta cuando está seleccionada */
+   .pokemon-card.selected {
+       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra blanca */
+       transform: translateY(-10px);            /* Eleva la tarjeta 10px hacia arriba */
+   }
+   
+   /* Estilos específicos para cada tipo de Pokémon cuando está seleccionado */
+   .pokemon-card.selected.electric {
+       box-shadow: 0 0 20px rgba(253, 203, 88, 0.4); /* Sombra amarilla */
+       border: 1px solid #fdcb58;               /* Borde amarillo */
+   }
+   
+   .pokemon-card.selected.omularo {
+       box-shadow: 0 0 20px rgba(238, 127, 48, 0.4); /* Sombra naranja */
+       border: 1px solid #ee7f30;               /* Borde naranja */
+   }
+   
+   .pokemon-card.selected.exeggutore {
+       box-shadow: 0 0 20px rgba(60, 174, 92, 0.4); /* Sombra verde */
+       border: 1px solid #3cae5c;               /* Borde verde */
+   }
+   
+   .pokemon-card.selected.venomoth {
+       box-shadow: 0 0 20px rgba(156, 86, 74, 0.4); /* Sombra marrón */
+       border: 1px solid #9c564a;               /* Borde marrón */
+   }
+   
+   .pokemon-card.selected.entei {
+       box-shadow: 0 0 20px rgba(79, 206, 232, 0.4); /* Sombra azul */
+       border: 1px solid #4fcee8;               /* Borde azul */
+   }
+   
+   .pokemon-card.selected.goodra {
+       box-shadow: 0 0 20px rgba(161, 96, 237, 0.4); /* Sombra morada */
+       border: 1px solid #a160ed;               /* Borde morado */
+   }
+   
+   /* Ajustes para pantallas de tamaño medio (tablets y móviles grandes) */
+   @media (max-width: 767px) {
+       .title {
+           font-size: 24px;                     /* Título más pequeño */
+       }
+       
+       .pokemon-grid {
+           grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
+           gap: 15px;                           /* Reduce el espacio entre tarjetas */
+       }
+       
+       .image-container, .pokemon-image {
+           width: 90px;                         /* Imágenes más pequeñas */
+           height: 90px;                        /* Imágenes más pequeñas */
+       }
+       
+       .pokemon-name {
+           font-size: 18px;                     /* Nombres más pequeños */
+       }
+       
+       .pokemon-info {
+           font-size: 12px;                     /* Información más pequeña */
+       }
+       
+       .buttons {
+           gap: 20px;                           /* Menos espacio entre botones */
+       }
+       
+       .btn {
+           padding: 10px 16px;                  /* Botones más pequeños */
+           font-size: 14px;                     /* Texto de botones más pequeño */
+       }
+   }
+   
+   /* Ajustes para pantallas muy pequeñas (móviles) */
+   @media (max-width: 480px) {
+       .pokemon-grid {
+           grid-template-columns: 1fr;          /* Cambia a 1 columna */
+       }
+       
+       .container {
+           padding: 15px;                       /* Reduce el espacio interior */
+       }
+   }

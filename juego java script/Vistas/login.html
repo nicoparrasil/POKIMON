@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKIMON</title>
+    
+    <!-- Enlace a la hoja de estilos y fuentes -->
+    <link rel="stylesheet" href="../Css/LOGIN.CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado con logo -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Pokimon</h1>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección de bienvenida -->
+        <div class="text-center mb-5">             
+            <h1>BIENVENIDO AL MUNDO POKIMON</h1>             
+            <h3>INICIAR SESIÓN</h3>             
+            <hr class="mx-auto" style="width: 50%;">         
+        </div>
+        
+        <!-- Formulario de inicio de sesión -->
+        <form id="loginForm" onsubmit="event.preventDefault(); Loguear();">
+            <!-- Campo para correo electrónico -->
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo:</label>
+                <input type="email" class="form-control" placeholder="Correo" id="correo" required>
+            </div>
+            
+            <!-- Campo para contraseña -->
+            <div class="mb-3">
+                <label for="clave" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" placeholder="Contraseña" id="clave" required>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="text-center">
+                <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                <a href="registro.html" id="registrarse">REGISTRARSE</a>
+            </div>
+        </form>
+    </main>
+    
+    <!-- Enlace al archivo JavaScript -->
+    <script src="../Js/index.js"></script>
+</body>
+</html>

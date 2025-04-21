@@ -1,0 +1,385 @@
+/*CONFIGURACIÓN GENERAL DEL CUERPO DE LA PÁGINA*/
+body {
+    margin: 0;                 /* Elimina los márgenes predeterminados */
+    padding: 0;                /* Elimina el relleno predeterminado */
+    font-family: 'Poppins', sans-serif;  /* Fuente principal del sitio */
+    /* Imagen de fondo con superposición oscura para mejorar legibilidad */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/Fondos/imagen4.jpg');
+    background-size: cover;    /* La imagen cubre todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* El fondo permanece fijo al desplazarse */
+    background-color: #000;    /* Color de respaldo si la imagen no carga */
+    color: #fff;               /* Color de texto principal */
+    display: flex;             /* Usa flexbox para centrado */
+    justify-content: center;   /* Centra horizontalmente */
+    align-items: center;       /* Centra verticalmente */
+    min-height: 100vh;         /* Ocupa al menos toda la altura de la ventana */
+}
+
+/*TARJETA PRINCIPAL DEL ENTRENADOR*/
+.trainer-card {
+    width: 95%;               /* Ocupa el 95% del ancho disponible */
+    max-width: 1000px;        /* Ancho máximo para pantallas grandes */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    border-radius: 15px;      /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Sombra exterior clara */
+    overflow: hidden;         /* Oculta contenido que sobresale del contenedor */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde fino brillante */
+}
+
+/*ENCABEZADO DE LA TARJETA*/
+.card-header {
+    display: flex;            /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye elementos a los extremos */
+    align-items: center;      /* Alinea verticalmente al centro */
+    padding: 18px 30px;       /* Espacio interno arriba/abajo y lados */
+    background: linear-gradient(135deg, #333 0%, #111 100%); /* Degradado diagonal */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+}
+
+/*LOGO DE POKiMON*/
+.pokemon-logo {
+    text-align: center;       /* Centra el texto */
+}
+
+.pokemon-logo h1 {
+    margin: 0;                /* Elimina los márgenes */
+    font-size: 2.4rem;        /* Tamaño de fuente grande */
+    font-weight: 700;         /* Grosor de fuente en negrita */
+    /* Aplica degradado de colores al texto */
+    background: linear-gradient(to right, #ff6b6b, #ffcc5c, #88d8b0, #48b1bf);
+    -webkit-background-clip: text; /* Hace que el degradado solo se aplique al texto */
+    background-clip: text;     /* Estándar para otros navegadores */
+    color: transparent;        /* Hace el texto transparente para mostrar el degradado */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Efecto de brillo sutil */
+}
+
+.pokemon-logo span {
+    font-size: 1rem;          /* Tamaño de fuente para el subtítulo */
+    color: #ccc;              /* Color de texto gris claro */
+    letter-spacing: 1px;      /* Espaciado entre letras */
+}
+
+/*POKEBALL DECORATIVA*/
+.pokeball {
+    width: 40px;              /* Ancho de la pokeball */
+    height: 40px;             /* Alto de la pokeball */
+    background: linear-gradient(to bottom, #ff0000 50%, #fff 50%); /* Colores rojo y blanco */
+    border-radius: 50%;       /* Forma circular */
+    position: relative;       /* Para posicionar pseudo-elementos */
+    border: 2px solid #000;   /* Borde negro */
+}
+
+/* Botón central de la pokeball */
+.pokeball::before {
+    content: '';              /* Contenido necesario para pseudo-elementos */
+    position: absolute;       /* Posicionamiento absoluto */
+    width: 10px;              /* Ancho del botón */
+    height: 10px;             /* Alto del botón */
+    background-color: #fff;   /* Color blanco */
+    border-radius: 50%;       /* Forma circular */
+    top: 50%;                 /* Centrado vertical */
+    left: 50%;                /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrado perfecto */
+    border: 2px solid #000;   /* Borde negro */
+    z-index: 2;               /* Apila por encima de otras capas */
+}
+
+/* Línea central de la pokeball */
+.pokeball::after {
+    content: '';              /* Contenido necesario para pseudo-elementos */
+    position: absolute;       /* Posicionamiento absoluto */
+    width: 40px;              /* Ancho igual al tamaño de la pokeball */
+    height: 2px;              /* Altura de la línea */
+    background-color: #000;   /* Color negro */
+    top: 50%;                 /* Centrado vertical */
+    left: 0;                  /* Comienza desde el borde izquierdo */
+    transform: translateY(-50%); /* Ajuste para centrado vertical */
+}
+
+/*CONTENIDO PRINCIPAL (ESTRUCTURA)*/
+.card-content {
+    display: flex;            /* Usa flexbox para el layout */
+    flex-wrap: wrap;          /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    padding: 25px;            /* Espacio interno uniforme */
+}
+
+/*COLUMNA IZQUIERDA - INFORMACIÓN DEL ENTRENADOR*/
+.trainer-info {
+    flex: 1;                  /* Factor de crecimiento flexible */
+    min-width: 300px;         /* Ancho mínimo antes de wrap */
+    padding: 20px;            /* Espacio interno */
+    display: flex;            /* Usa flexbox para elementos hijos */
+    flex-direction: column;   /* Apila elementos verticalmente */
+    gap: 25px;                /* Espacio entre elementos */
+}
+
+/*IMAGEN DEL ENTRENADOR*/
+.trainer-image {
+    width: 100%;              /* Ocupa todo el ancho disponible */
+    border-radius: 12px;      /* Bordes redondeados */
+    overflow: hidden;         /* Recorta la imagen a los bordes redondeados */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Sombra brillante */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+.trainer-image img {
+    width: 100%;              /* Ocupa todo el ancho del contenedor */
+    height: auto;             /* Mantiene la proporción de la imagen */
+    display: block;           /* Elimina espacio inferior de la imagen */
+    transition: transform 0.3s ease; /* Animación suave para efecto hover */
+    filter: brightness(0.9);  /* Oscurece ligeramente la imagen */
+}
+
+/* Efecto al pasar el ratón sobre la imagen */
+.trainer-image:hover img {
+    transform: scale(1.03);   /* Agranda ligeramente la imagen */
+    filter: brightness(1);    /* Restaura el brillo normal */
+}
+
+/*SECCIÓN DE OTROS POKÉMON*/
+.other-pokemon {
+    background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro semitransparente */
+    border-radius: 12px;      /* Bordes redondeados */
+    padding: 18px;            /* Espacio interno */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+}
+
+.other-pokemon h3 {
+    margin-top: 0;            /* Elimina margen superior */
+    margin-bottom: 15px;      /* Espacio debajo del título */
+    text-align: center;       /* Centrado de texto */
+    color: #88d8b0;           /* Color verde azulado */
+    letter-spacing: 1px;      /* Espaciado entre letras */
+    font-size: 1.2rem;        /* Tamaño de fuente */
+}
+
+/* Cuadrícula para mostrar los Pokémon */
+.other-pokemon-grid {
+    display: grid;            /* Usa layout de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 12px;                /* Espacio entre elementos */
+}
+
+/* Elementos individuales de Pokémon */
+.other-pokemon-item {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    border-radius: 10px;      /* Bordes redondeados */
+    overflow: hidden;         /* Recorta contenido a los bordes */
+    aspect-ratio: 1/1;        /* Mantiene forma cuadrada */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    transition: all 0.2s ease; /* Animación suave */
+    display: flex;            /* Usa flexbox para centrar imagen */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+}
+
+/* Efecto al pasar el ratón */
+.other-pokemon-item:hover {
+    transform: translateY(-3px); /* Eleva ligeramente el elemento */
+}
+
+/* Imágenes de Pokémon */
+.other-pokemon-item img {
+    max-width: 85%;           /* Ancho máximo dentro del contenedor */
+    max-height: 85%;          /* Altura máxima dentro del contenedor */
+    object-fit: contain;      /* Mantiene proporción sin recortar */
+    filter: brightness(0.9);  /* Oscurece ligeramente */
+}
+
+/* Restaura brillo al pasar el ratón */
+.other-pokemon-item:hover img {
+    filter: brightness(1);    /* Restaura brillo normal */
+}
+
+/*COLUMNA DERECHA - CONTENIDO PRINCIPAL */
+.main-content {
+    flex: 1.5;                /* Factor de crecimiento mayor que la columna izquierda */
+    min-width: 300px;         /* Ancho mínimo antes de wrap */
+    padding: 20px;            /* Espacio interno */
+}
+
+/*INFORMACIÓN PERSONAL */
+.personal-info {
+    background-color: rgba(20, 20, 20, 0.9); /* Fondo oscuro casi opaco */
+    border-radius: 12px;      /* Bordes redondeados */
+    padding: 25px;            /* Espacio interno generoso */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino */
+}
+
+/* Cuadrícula para información personal */
+.info-grid {
+    display: grid;            /* Usa layout de cuadrícula */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    gap: 20px;                /* Espacio entre elementos */
+}
+
+/* Filas de información */
+.info-row {
+    margin-bottom: 15px;      /* Espacio bajo cada fila */
+    display: flex;            /* Usa flexbox para etiqueta y valor */
+    align-items: baseline;    /* Alinea textos por su línea base */
+}
+
+/* Etiquetas de información */
+.info-label {
+    font-weight: 600;         /* Texto semi-negrita */
+    color: #ffcc5c;           /* Color amarillo-dorado */
+    font-size: 1rem;          /* Tamaño de fuente */
+    margin-right: 10px;       /* Espacio a la derecha */
+    min-width: 120px;         /* Ancho mínimo para alineación */
+}
+
+/* Valores de información */
+.info-value {
+    color: #fff;              /* Color blanco */
+    font-size: 1.05rem;       /* Tamaño de fuente */
+    position: relative;       /* Para el pseudo-elemento de línea */
+}
+
+/* Línea decorativa debajo de cada valor */
+.info-value::after {
+    content: '';              /* Contenido necesario para pseudo-elementos */
+    position: absolute;       /* Posicionamiento absoluto */
+    bottom: -4px;             /* Posición debajo del texto */
+    left: 0;                  /* Comienza desde el borde izquierdo */
+    width: 100%;              /* Ocupa todo el ancho */
+    height: 1px;              /* Altura de la línea */
+    /* Degradado para efecto sutil */
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Nombre y usuario con efecto rojo */
+#nombrePerfil, #usuarioPerfil {
+    color: #ff6b6b;           /* Color rojo-coral */
+    text-shadow: 0 0 3px rgba(255, 107, 107, 0.5); /* Brillo sutil */
+}
+
+/* Región con efecto azul */
+#regionPerfil {
+    color: #48b1bf;           /* Color azul-turquesa */
+    text-shadow: 0 0 3px rgba(72, 177, 191, 0.5); /* Brillo sutil */
+}
+
+/* BOTÓN DE BATALLA */
+/* Contenedor del botón de batalla */
+.battle-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+/* Estilo del botón de batalla */
+.battle-button {
+    background: linear-gradient(135deg, #333 0%, #111 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover del botón */
+.battle-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.5);
+    background: linear-gradient(135deg, #444 0%, #222 100%);
+}
+
+/* Efecto active al presionar el botón */
+.battle-button:active {
+    transform: translateY(1px);
+}
+
+/* Pokeball decorativa en el botón */
+.button-pokeball {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(to bottom, #ff0000 50%, #fff 50%);
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid #000;
+    margin-right: 12px;
+}
+
+/* Botón central de la pokeball */
+.button-pokeball::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    z-index: 2;
+}
+
+/* Línea central de la pokeball */
+.button-pokeball::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background-color: #000;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    /* En pantallas pequeñas, apila las columnas */
+    .card-content {
+        flex-direction: column; /* Columnas en vez de filas */
+    }
+    
+    /* Una sola columna para la información */
+    .info-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+    
+    /* Ajusta el padding del encabezado */
+    .card-header {
+        padding: 12px 18px;   /* Reduce el padding */
+    }
+    
+    /* Reduce tamaño del título */
+    .pokemon-logo h1 {
+        font-size: 2rem;      /* Fuente más pequeña */
+    }
+    
+    /* Ajusta subtítulo */
+    .pokemon-logo span {
+        font-size: 0.9rem;    /* Fuente más pequeña */
+    }
+    
+    /* Ajustes para el botón de batalla en pantallas pequeñas */
+    .battle-button {
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+    
+    .button-pokeball {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+    
+    .button-pokeball::after {
+        width: 20px;
+    }
+}

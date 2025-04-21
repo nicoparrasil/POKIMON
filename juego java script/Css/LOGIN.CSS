@@ -1,0 +1,275 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Estilos para el fondo y estructura del body */
+body {
+    background-color: #000; /* Color de respaldo */
+    background-image: url('../assets/Fondos/imagen2.webp'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #fff; /* Color del texto general */
+    min-height: 100vh; /* Asegura que el contenido cubra al menos toda la altura visible */
+    display: flex; /* Usa flexbox para centar verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal para limitar el ancho del contenido */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el encabezado */
+header {
+    width: 100%;
+}
+
+/* Estilos para el logo */
+.logo {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos para el texto del logo */
+.logo h1 {
+    font-family: 'Press Start 2P', 'Courier New', monospace; /* Fuente de videojuego */
+    color: #FFCB05; /* Amarillo Pokémon */
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 #3466AF, /* Sombras para efecto 3D */
+                 4px 4px 0 #FF0000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Estilos para títulos h1 */
+h1 {
+    color: #3466AF; /* Azul Pokémon */
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px #3466AF, /* Efectos de brillo */
+                 0 0 20px #3466AF,
+                 0 0 30px #3466AF;
+    margin: 1rem 0;
+    letter-spacing: 1px;
+}
+
+/* Estilos para títulos h3 */
+h3 {
+    color: #FF7700; /* Naranja para contraste */
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px #FF7700, /* Efecto de brillo */
+                 0 0 20px #FF7700;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para línea divisoria con gradiente */
+hr {
+    width: 60%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    height: 2px;
+    background: linear-gradient(to right, /* Gradiente de colores */
+                rgba(52, 102, 175, 0.8),
+                rgba(255, 119, 0, 0.8),
+                rgba(76, 175, 80, 0.8)); 
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Centrado vertical del contenedor principal */
+main.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Estilos para el formulario de login */
+#loginForm {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.3), /* Efectos de sombra con colores */
+                0 0 50px rgba(255, 0, 0, 0.2),
+                0 0 70px rgba(0, 255, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Borde superior del formulario con gradiente */
+#loginForm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #00f, #f00, #0f0);
+    opacity: 0.7;
+}
+
+/* Etiquetas de formulario */
+.form-label {
+    color: #FFCB05; /* Amarillo Pokémon */
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    text-shadow: 0 0 5px rgba(255, 203, 5, 0.5);
+}
+
+/* Campos de entrada del formulario */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+/* Efecto de enfoque para campos de entrada */
+.form-control:focus {
+    border-color: #FFCB05; /* Borde amarillo al enfocar */
+    box-shadow: 0 0 10px rgba(52, 102, 175, 0.7); /* Brillo azul */
+    outline: none;
+}
+
+/* Botón de inicio de sesión */
+.btn-primary {
+    background: #0066FF; /* Azul */
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 150px;
+    margin: 0.5rem auto;
+    display: block;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+}
+
+/* Efecto hover para botón de inicio de sesión */
+.btn-primary:hover {
+    background: #0055DD; /* Azul más oscuro */
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.8); /* Brillo más intenso */
+    transform: translateY(-2px); /* Elevación ligera */
+}
+
+/* Enlace de registro */
+#registrarse {
+    background: rgba(30, 30, 30, 0.8); /* Gris oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Efecto hover para enlace de registro */
+#registrarse:hover {
+    background: rgba(50, 50, 50, 0.8); /* Gris más claro */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Clase utilitaria para centrar texto */
+.text-center {
+    text-align: center;
+}
+
+/* Ocultar botones de navegación */
+.row.justify-content-center.text-center.my-5 {
+    display: none;
+}
+
+/* Clase de utilidad para márgenes */
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para el título principal de Pokémon */
+main h1:first-of-type {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #FFCB05; /* Amarillo Pokémon */
+    text-shadow: 2px 2px 0 #3466AF; /* Sombra azul */
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para el subtítulo */
+main h3 {
+    font-family: 'Courier New', monospace;
+    color: #4DB6ED; /* Azul claro */
+    text-shadow: 0 0 5px #4DB6ED;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Media queries para responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem; /* Reducir tamaño en pantallas pequeñas */
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #loginForm {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .form-label {
+        font-size: 1rem;
+    }
+    
+    main h1:first-of-type {
+        font-size: 1.6rem;
+    }
+    
+    main h3 {
+        font-size: 1rem;
+    }
+}

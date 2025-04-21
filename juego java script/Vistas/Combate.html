@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate Pokimon</title>
+    <link rel="stylesheet" href="../Css/Combate.css">
+    <script src="../Js/Combate.js"></script>
+</head>
+<body onload="iniciarCombate()">
+    <div class="battle-screen">
+        <!-- Área de combate con fondo -->
+        <div class="battle-area">
+            <!-- Pokémon enemigo -->
+            <div class="enemy-pokemon">
+                <div class="pokemon-stats">
+                    <div class="stats-header">
+                        <span class="pokemon-name" id="enemyName">Gyarados</span>
+                        <span class="pokemon-level" id="enemyLevel">Nv.20</span>
+                    </div>
+                    <div class="health-container">
+                        <div class="health-bar">
+                            <div class="health-fill" id="enemyHealth"></div>
+                        </div>
+                        <div class="health-text" id="enemyHP">63/63</div>
+                    </div>
+                </div>
+                <img src="../assets/img de Batallas/Gyarados.webp" alt="Pokémon enemigo" id="enemyImage" class="enemy-sprite">
+            </div>
+            
+            <!-- Pokémon del jugador -->
+            <div class="player-pokemon">
+                <div class="pokemon-stats player-stats">
+                    <div class="stats-header">
+                        <span class="pokemon-name" id="playerName">Pikachu</span>
+                        <span class="pokemon-level" id="playerLevel">Nv.56</span>
+                    </div>
+                    <div class="health-container">
+                        <div class="health-bar">
+                            <div class="health-fill" id="playerHealth"></div>
+                        </div>
+                        <div class="health-text" id="playerHP">100/100</div>
+                    </div>
+                </div>
+                <img src="../assets/img de Batallas/picachu.gif" alt="Pokémon del jugador" id="playerImage" class="player-sprite">
+            </div>
+        </div>
+        
+        <!-- Interfaz de combate inferior -->
+        <div class="battle-interface">
+            <!-- Cuadro de diálogo -->
+            <div class="dialog-box">
+                <p id="dialogText">¿Qué hará <span id="activeMonName">Pikachu</span>?</p>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <button class="action-button fight" id="btnFight">LUCHAR</button>
+                <button class="action-button bag" id="btnBag">MOCHILA</button>
+                <button class="action-button pokemon" id="btnPokemon">POKÉMON</button>
+                <button class="action-button run" id="btnRun">HUIR</button>
+            </div>
+            
+            <!-- Submenu de ataques (inicialmente oculto) -->
+            <div class="moves-menu" id="movesMenu">
+                <button class="move-button" id="move1">Ataque Rápido</button>
+                <button class="move-button" id="move2">Rayo</button>
+                <button class="move-button" id="move3">Cola Férrea</button>
+                <button class="move-button" id="move4">Volver</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

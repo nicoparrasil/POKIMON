@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos para configuración de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Pokimon</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="../Css/Batalla.css">
+</head>
+<body>
+    <!-- Contenedor principal que limita el ancho del contenido -->
+    <div class="container">
+        <!-- Título principal de la página -->
+        <div class="title">Escoge tu Pokimon</div>
+        
+        <!-- Cuadrícula para mostrar las tarjetas de Pokimon (3 columnas) -->
+        <div class="pokemon-grid">
+            <!-- Tarjeta para el primer Pokimon: Pikachu -->
+            <div class="pokemon-card electric">
+                <!-- Nivel del Pokimon (esquina superior izquierda) -->
+                <div class="level">Nv 56</div>
+                <!-- Nombre del Pokimon -->
+                <div class="pokemon-name">Pikachu</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <!-- Imagen del Pokémon -->
+                    <img src="../assets/img de Batallas/picachu.gif" alt="Pikachu" class="pokemon-image">
+                </div>
+                <!-- Contenedor para la barra de salud -->
+                <div class="health-bar">
+                    <!-- Relleno de la barra de salud -->
+                    <div class="health-fill"></div>
+                </div>
+                <!-- Estadísticas de puntos de salud -->
+                <div class="stats">PS: 100/100</div>
+                <!-- Información adicional del Pokimon -->
+                <div class="pokemon-info">
+                    Tipo: Eléctrico<br>
+                    Habilidad: Electricidad estática<br>
+                    Movimientos: Ataque Rápido, Rayo y Cola Férrea
+                </div>
+            </div>
+            
+            <!-- Tarjeta para el segundo Pokimon: Charizard -->
+            <div class="pokemon-card omularo">
+                <div class="level">Nv 55</div>
+                <div class="pokemon-name">Charizard</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <img src="../assets/img de Batallas/charizard.gif" alt="Charizard" class="pokemon-image">
+                </div>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+                <div class="stats">PS: 182/182</div>
+                <div class="pokemon-info">
+                    Tipo: Fuego/Volador<br>
+                    Habilidad: Mar Llamas<br>
+                    Movimientos: Lanzallamas, Garra Dragón
+                </div>
+            </div>
+            
+            <!-- Tarjeta para el tercer Pokimon: Bulbasaur (reemplazo de Jigglypuff) -->
+            <div class="pokemon-card exeggutore">
+                <div class="level">Nv 45</div>
+                <div class="pokemon-name">Bulbasaur</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <img src="../assets/img de Batallas/Bulbasau.gif" alt="Bulbasaur" class="pokemon-image">
+                </div>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+                <div class="stats">PS: 150/150</div>
+                <div class="pokemon-info">
+                    Tipo: Planta/Veneno<br>
+                    Habilidad: Espesura<br>
+                    Movimientos: Látigo Cepa, Bomba Lodo
+                </div>
+            </div>
+            
+            <!-- Tarjeta para el cuarto Pokimon: Gengar (reemplazo de Venomoth) -->
+            <div class="pokemon-card venomoth">
+                <div class="level">Nv 60</div>
+                <div class="pokemon-name">Gengar</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <img src="../assets/img de Batallas/Gengar.gif" alt="Gengar" class="pokemon-image">
+                </div>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+                <div class="stats">PS: 175/175</div>
+                <div class="pokemon-info">
+                    Tipo: Fantasma/Veneno<br>
+                    Habilidad: Levitación<br>
+                    Movimientos: Bola Sombra, Puño Sombra
+                </div>
+            </div>
+            
+            <!-- Tarjeta para el quinto Pokimon: Gyarados (reemplazo de Entei) -->
+            <div class="pokemon-card entei">
+                <div class="level">Nv 58</div>
+                <div class="pokemon-name">Gyarados</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <img src="../assets/img de Batallas/Gyarados.webp" alt="Gyarados" class="pokemon-image">
+                </div>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+                <div class="stats">PS: 230/230</div>
+                <div class="pokemon-info">
+                    Tipo: Agua/Volador<br>
+                    Habilidad: Intimidación<br>
+                    Movimientos: Hidrobomba, Hiperrayo
+                </div>
+            </div>
+            
+            <!-- Tarjeta para el sexto Pokimon: Lucario (reemplazo de Goodra) -->
+            <div class="pokemon-card goodra">
+                <div class="level">Nv 55</div>
+                <div class="pokemon-name">Lucario</div>
+                <!-- Contenedor de imagen -->
+                <div class="image-container">
+                    <img src="../assets/img de Batallas/lucario.gif" alt="Lucario" class="pokemon-image">
+                </div>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+                <div class="stats">PS: 200/200</div>
+                <div class="pokemon-info">
+                    Tipo: Lucha/Acero<br>
+                    Habilidad: Foco Interno<br>
+                    Movimientos: Esfera Aural, Puño Incremento
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenedor para los botones de acción -->
+        <div class="buttons">
+            <!-- Botón para iniciar batalla -->
+            <a href="Combate.html" class="btn btn-outline-dark">Batalla</a>
+            <!-- Botón para salir -->
+            <button class="btn btn-exit">Salir</button>
+        </div>
+    </div>
+</body>
+</html>

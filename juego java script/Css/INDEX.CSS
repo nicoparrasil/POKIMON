@@ -1,0 +1,209 @@
+/* Reset básico de estilos para asegurar consistencia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Estilos para el fondo de la página */
+body {
+    background-color: #000; /* Color de respaldo */
+    background-image: url('../assets/Fondos/imagen1.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija durante el scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #fff; /* Color del texto general */
+    min-height: 100vh; /* Asegura que el contenido cubra al menos toda la altura visible */
+}
+
+/* Contenedor principal para limitar el ancho del contenido */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos para el logo */
+.logo {
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos específicos para el texto del logo */
+.logo h1 {
+    font-family: 'Press Start 2P', 'Courier New', monospace; /* Fuente estilo videojuego */
+    color: #FFCB05; /* Amarillo característico de Pokémon */
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 #3466AF, /* Sombra azul para efecto de profundidad */
+                 4px 4px 0 #FF0000; /* Sombra roja para efecto 3D */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Estilos para títulos principales */
+h1 {
+    color: #3466AF; /* Azul característico de Pokémon */
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px #3466AF, /* Efecto de brillo */
+                 0 0 20px #3466AF,
+                 0 0 30px #3466AF;
+    margin: 1rem 0;
+    letter-spacing: 1px;
+}
+
+/* Estilos para subtítulos */
+h3 {
+    color: #FF7700; /* Naranja vibrante para contraste */
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px #FF7700, /* Efecto de brillo */
+                 0 0 20px #FF7700;
+    margin-bottom: 2rem;
+}
+
+/* Línea divisoria con gradiente */
+hr {
+    width: 60%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    height: 2px;
+    background: linear-gradient(to right,
+                rgba(52, 102, 175, 0.8), /* Azul */
+                rgba(255, 119, 0, 0.8), /* Naranja */
+                rgba(76, 175, 80, 0.8)); /* Verde */
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para los botones */
+.btn-outline-dark,
+a.btn,
+button {
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque para profundidad */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: all 0.4s ease; /* Transición suave para efectos hover */
+    font-weight: 600;
+    width: auto;
+    max-width: 250px;
+    margin: 0.5rem auto;
+    position: relative;
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+ 
+/* Efecto hover para el primer botón */
+.btn-outline-dark:hover {
+    background: rgba(52, 102, 175, 0.3); /* Fondo azul semi-transparente */
+    box-shadow: 0 0 15px rgba(52, 102, 175, 0.7); /* Brillo azul */
+    transform: translateY(-3px); /* Elevación ligera */
+}
+
+/* Efecto hover para el segundo botón */
+.btn-outline-dark:nth-child(2):hover {
+    background: rgba(255, 119, 0, 0.3); /* Fondo naranja semi-transparente */
+    box-shadow: 0 0 15px rgba(255, 119, 0, 0.7); /* Brillo naranja */
+    transform: translateY(-3px); /* Elevación ligera */
+}
+
+/* Efecto hover para el tercer botón */
+.btn-outline-dark:nth-child(3):hover {
+    background: rgba(76, 175, 80, 0.3); /* Fondo verde semi-transparente */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.7); /* Brillo verde */
+    transform: translateY(-3px); /* Elevación ligera */
+}
+
+/* Estilo para filas y elementos centrados */
+.row, center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+/* Clase utilitaria para centrar texto */
+.text-center {
+    text-align: center;
+}
+
+/* Media queries para responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn-outline-dark, a.btn, button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.3rem;
+    }
+}
+
+/* Estilo para la cuadrícula de botones */
+.d-grid.gap-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem !important;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Espaciado adicional para el contenedor principal */
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Estilo para el título principal de Pokémon */
+main h1:first-of-type {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #FFCB05; /* Amarillo Pokémon */
+    text-shadow: 2px 2px 0 #3466AF; /* Sombra azul */
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para el subtítulo */
+main h3 {
+    font-family: 'Courier New', monospace;
+    color: #4DB6ED; /* Azul claro */
+    text-shadow: 0 0 5px #4DB6ED;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Media queries adicionales para títulos en móviles */
+@media (max-width: 768px) {
+    main h1:first-of-type {
+        font-size: 1.6rem;
+    }
+    
+    main h3 {
+        font-size: 1rem;
+    }
+}

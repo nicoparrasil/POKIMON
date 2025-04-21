@@ -1,0 +1,346 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Press Start 2P', cursive;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Pantalla de batalla principal */
+.battle-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}
+
+/* Área de combate con fondo */
+.battle-area {
+    flex: 2;
+    background-image: url('../assets/Combate/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* Pokémon enemigo */
+.enemy-pokemon {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    z-index: 2;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.enemy-sprite {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    position: relative;
+    top: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pokémon del jugador */
+.player-pokemon {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    z-index: 2;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.player-sprite {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    animation: bob 2s ease-in-out infinite;
+}
+
+/* Estadísticas de Pokémon */
+.pokemon-stats {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 10px;
+    min-width: 200px;
+    border: 3px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.pokemon-name {
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.pokemon-level {
+    font-size: 14px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+/* Barra de salud */
+.health-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+}
+
+.health-bar {
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin-top: 4px;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+
+.health-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    border-radius: 4px;
+    transition: width 0.8s ease-in-out;
+}
+
+/* Efecto de salud baja */
+.health-low {
+    background: linear-gradient(to right, #ff9800, #f44336);
+    animation: pulse 1.5s infinite;
+}
+
+/* Texto de HP */
+.health-text {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+/* Interfaz de combate */
+.battle-interface {
+    height: 180px;
+    background-color: #f8f8f8;
+    border-top: 5px solid #333;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cuadro de diálogo */
+.dialog-box {
+    flex: 1;
+    background-color: white;
+    margin: 12px;
+    border-radius: 15px;
+    border: 4px solid #333;
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de acción */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    height: 120px;
+}
+
+.action-button {
+    border: 4px solid #333;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de botones */
+.fight {
+    background: linear-gradient(to bottom, #ff7070, #FF5252);
+    color: white;
+}
+
+.bag {
+    background: linear-gradient(to bottom, #ffe066, #FFD740);
+    color: #333;
+}
+
+.pokemon {
+    background: linear-gradient(to bottom, #7dff7d, #64DD17);
+    color: white;
+}
+
+.run {
+    background: linear-gradient(to bottom, #66d9ff, #40C4FF);
+    color: white;
+}
+
+/* Efectos hover para botones */
+.action-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Menú de movimientos */
+.moves-menu {
+    display: none; /* Oculto por defecto */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    height: 120px;
+    background-color: #f8f8f8;
+}
+
+.move-button {
+    border: 3px solid #333;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.move-button:hover {
+    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Animaciones */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bob {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.active-pokemon {
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-12px);
+    }
+}
+
+/* Efectos especiales para ataques */
+.attack-flash {
+    animation: flash 0.8s;
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.3;
+    }
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .pokemon-stats {
+        min-width: 170px;
+    }
+    
+    .dialog-box {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
+    .action-button {
+        font-size: 14px;
+    }
+    
+    .enemy-sprite {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .player-sprite {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Media query para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .pokemon-stats {
+        min-width: 130px;
+        padding: 6px;
+    }
+    
+    .dialog-box {
+        font-size: 14px;
+        padding: 8px;
+        margin: 8px;
+    }
+    
+    .action-button, .move-button {
+        font-size: 12px;
+        border-width: 3px;
+    }
+}

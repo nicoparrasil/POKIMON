@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKIMON</title>
+    
+    <!-- Enlace a hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="../Css/REGISTRO.CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Encabezado con logo -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Pokimon</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección de bienvenida -->
+        <div class="text-center mb-5">
+            <h1>BIENVENIDO AL MUNDO POKIMON</h1>
+            <h3>REGISTRATE PARA UNA EXPERIENCIA ÚNICA</h3>
+            <hr class="mx-auto">
+        </div>
+
+        <!-- Contenedor del formulario -->
+        <div class="form-container">
+            <!-- Formulario de registro con evento de envío que llama a la función Registro() -->
+            <form id="registroForm" onsubmit="event.preventDefault(); Registro();">
+                <!-- Campo para nombre -->
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" placeholder="Nombre" id="nombre" class="form-control" required>
+                </div>
+
+                <!-- Campo para región -->
+                <div class="form-group">
+                    <label for="region">Región:</label>
+                    <input type="text" placeholder="País" id="region" class="form-control" required>
+                </div>
+
+                <!-- Campo para usuario -->
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" placeholder="Usuario" id="usuario" class="form-control" required>
+                </div>
+
+                <!-- Campo para correo -->
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" placeholder="Correo" id="correo" class="form-control" required>
+                </div>
+
+                <!-- Campo para contraseña -->
+                <div class="form-group">
+                    <label for="clave">Contraseña:</label>
+                    <input type="password" placeholder="Contraseña" id="clave" class="form-control" required>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="buttons-container">
+                    <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="../Js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Entrenador Pokémon</title>
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="../Css/Entrenador.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Script JS para cargar los datos de usuario -->
+    <script src="../Js/Entrenador.js"></script>
+</head>
+<!-- Al cargar la página se ejecuta la función GetDataUser para verificar el login -->
+<body onload="GetDataUser()">
+    <!-- Tarjeta principal del entrenador -->
+    <div class="trainer-card">
+        <!-- Encabezado de la tarjeta -->
+        <div class="card-header">
+            <!-- Elemento decorativo: Pokeball izquierda -->
+            <div class="pokeball"></div>
+            <!-- Logo de Pokémon -->
+            <div class="pokemon-logo">
+                <h1>Pokimon</h1>
+                <span>PERFIL DE ENTRENADOR</span>
+            </div>
+            <!-- Elemento decorativo: Pokeball derecha -->
+            <div class="pokeball"></div>
+        </div>
+        
+        <!-- Contenido principal dividido en dos columnas -->
+        <div class="card-content">
+            <!-- Columna izquierda: Información del entrenador -->
+            <div class="trainer-info">
+                <!-- Imagen del entrenador -->
+                <div class="trainer-image">
+                    <img src="../assets/Perfil/entrenador2.gif" alt="Perfil del Entrenador">
+                </div>
+                
+                <!-- Sección de otros Pokémon -->
+                <div class="other-pokemon">
+                    <h3>OTROS POKIMON</h3>
+                    <!-- Cuadrícula para mostrar hasta 6 Pokémon -->
+                    <div class="other-pokemon-grid" id="pokemon-grid">
+                        <!-- Los elementos Pokémon se cargarán dinámicamente desde JS -->
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/buizel.gif" alt="Pokémon 1"></div>
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/tumblr.gif" alt="Pokémon 2"></div>
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/rosa.gif" alt="Pokémon 3"></div>
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/mewtwo.gif" alt="Pokémon 4"></div>
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/popocho.gif" alt="Pokémon 5"></div>
+                        <div class="other-pokemon-item"><img src="../assets/otros pokimones del entrenador/giphy.gif" alt="Pokémon 6"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Columna derecha: Contenido principal -->
+            <div class="main-content">
+                <!-- Información personal del entrenador -->
+                <div class="personal-info">
+                    <!-- Cuadrícula 2x4 para información personal -->
+                    <div class="info-grid">
+                        <div>
+                            <!-- Fila de información: Nombre (se rellena con JS) -->
+                            <div class="info-row">
+                                <div class="info-label">NOMBRE:</div>
+                                <div class="info-value" id="nombrePerfil">NICK</div>
+                            </div>
+                            <!-- Fila de información: Edad (estática) -->
+                            <div class="info-row">
+                                <div class="info-label">EDAD:</div>
+                                <div class="info-value">17</div>
+                            </div>
+                            <!-- Fila de información: Región (se rellena con JS) -->
+                            <div class="info-row">
+                                <div class="info-label">REGIÓN:</div>
+                                <div class="info-value" id="regionPerfil">SINNOH</div>
+                            </div>
+                            <!-- Fila de información: Ciudad natal (estática) -->
+                            <div class="info-row">
+                                <div class="info-label">CIUDAD NATAL:</div>
+                                <div class="info-value">PUEBLO HOJAVERDE</div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Fila de información: Clase (estática) -->
+                            <div class="info-row">
+                                <div class="info-label">CLASE:</div>
+                                <div class="info-value">ENTRENADOR</div>
+                            </div>
+                            <!-- Fila de información: Usuario (se rellena con JS) -->
+                            <div class="info-row">
+                                <div class="info-label">USUARIO:</div>
+                                <div class="info-value" id="usuarioPerfil">USUARIO</div>
+                            </div>
+                            <!-- Fila de información: Tipo favorito (estática) -->
+                            <div class="info-row">
+                                <div class="info-label">TIPO FAVORITO:</div>
+                                <div class="info-value" id="tipoFavorito">ROCA</div>
+                            </div>
+                            <!-- Fila de información: Medallas (estática) -->
+                            <div class="info-row">
+                                <div class="info-label">MEDALLAS:</div>
+                                <div class="info-value">35</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contenedor para el botón de selección de Pokémon -->
+            <div class="battle-button-container">
+                <button id="choosePokemon" class="battle-button" onclick="window.location.href='Batalla.html'">
+                    <!-- Icono de Pokeball (opcional) -->
+                    <div class="button-pokeball"></div>
+                    <!-- Texto del botón -->
+                    <span>Escoge tu Pokimon</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
